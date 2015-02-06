@@ -1,6 +1,10 @@
 **Chris Blackburn**
 
-[TODO: Fill in info]
+<img src='CJB_JWHB.png'/>
+
+Chris works for [NIST](www.nist.gov) (formerly the National Bureau of Standards) in the field of measurement science, also known as [metrology](http://en.wikipedia.org/wiki/Metrology). Most people have either never heard of this, or think it has something to do with the [weather](http://en.wikipedia.org/wiki/Meteorology). Chris himself mistakenly believed he was getting into meteorology at first.
+
+Chris's interests include playing the drums, watching the Memphis Grizzlies, origami, Lego, and writing code. He is a new dad to a beautiful little stinker called Jack. Chris and his family live in Silver Spring, MD.
 
 **Chris Crook**
 
