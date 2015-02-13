@@ -25,13 +25,16 @@ class DomainCounter
 	all_emails = words.select{|word| word =~ /.@*.com/}
 	
 	#CPC: put all email addresses through the parseDomain function to get the list of domains
-	#CPC: collect technically isn't a loop construct...
+	#CPC: the collect statement (not a loop!) could be chained onto the line above (didn't for clarity)
 	domains = all_emails.collect{|word| parseDomain(word)}
 	
-	#CPC: create a hash entry in @domains_count with the name of the domain as the key
-	# and the count of each unique domain, measured by the number of times it appears in the @domains array
-	domains.uniq.collect{|domain| @domains_count[:"#{domain}"] = domains.count(domain)}
+	#CPC: Group down on the domains collection into a hash
+	domains = domains.group_by{|domain| domain}
 	
+	#CPC: Merge the hash into itself so the code block for duplicate handling is used to provide new values 
+	#for each key (the count instead of an array of parsed domain elements)
+	@domains_count = domains.merge(domains){|key, old, new| old.count()}
+
     #return self to enable method chaining
     self
   end
