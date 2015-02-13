@@ -5,7 +5,14 @@ class DomainCounter
 
   def parseDomain(emailAddress)
 	#CPC: split the email to get the domain after the @
-	domain_plus_tail = emailAddress.split(/\@+/)[1]
+	split_email = emailAddress.split(/\@+/)
+	
+	#CPC: a little error checking in case there is a bogus @
+	if split_email.count() > 1
+		domain_plus_tail = split_email[1]
+	else
+		domain_plus_tail = split_email[0]
+	end
 	
 	#CPC: assume 3-letter TLD so we can trim junk chars off the end
 	tld_end = domain_plus_tail.index(".")+3 
