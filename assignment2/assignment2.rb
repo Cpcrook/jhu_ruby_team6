@@ -1,6 +1,6 @@
 class DomainCounter
   def initialize
-    @domains_count = {hotmail: 0, yahoo: 0, gmail: 0}
+    @domains_count = {}
   end
 
   def parseDomain(emailAddress)
