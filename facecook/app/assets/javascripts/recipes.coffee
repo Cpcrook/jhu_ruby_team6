@@ -3,13 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
+  #this code equalizes the heights of the .thumbnail divs
   maxHeightCaption = 0
   maxHeightPicture = 0
 
-  $('.caption').each ->
+  $('.thumbnail.caption').each ->
     maxHeightCaption = $(@).height() if $(@).height() > maxHeightCaption
 
-  $('.caption').each ->
+  $('.thumbnail.caption').each ->
     $(@).height maxHeightCaption
 
   $('.thumbnail.photo').each ->
