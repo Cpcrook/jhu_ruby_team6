@@ -1,0 +1,17 @@
+<div class='page-header'>
+  <h2>Recipes for <%= @keyword %></h2>
+</div>
+<table class='table'>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Ingredients</th>
+  </tr>
+  <% @results.each do |result| %>
+    <tr>
+      <td><%= link_to image_tag(result['thumbnail']), result['href'] %></td>
+      <td><h3><%= link_to sanitize(result['title']), result['href'] %></h3></td>
+      <td><%= sanitize result['ingredients'] %></td>
+    </tr>
+  <% end %>
+</table>
